@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[7]:
+# In[1]:
 
 
 # Save as .py file once finished
@@ -37,7 +37,8 @@ print(even_positives)
 
 # 4. If you were to add 3 to each data point, how many positive numbers would there be?
 plus3 = a + 3
-print(f'plus3 > 0  == {plus3 > 0}')
+print(f'plus3 > 0  == {sum(plus3 > 0)}')
+
 
 # There are 10 positive numbers after adding 3
 
@@ -80,13 +81,19 @@ a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Exercise 1 - Make a variable called sum_of_a to hold the sum of all the numbers in above list
 
 sum_of_a = sum(a)
+print(sum_of_a)
 
 # Exercise 2 - Make a variable named min_of_a to hold the minimum of all the numbers in the above list
+min_of_a = min(a)
+print(min_of_a)
 
 # Exercise 3 - Make a variable named max_of_a to hold the max number of all the numbers in the above list
+max_of_a = max(a)
+print(max_of_a)
 
 # Exercise 4 - Make a variable named mean_of_a to hold the average of all the numbers in the above list
 mean_of_a = sum(a) / len(a)
+print(mean_of_a)
 
 # Exercise 5 - Make a variable named product_of_a to hold the product of multiplying all the numbers in the above list together
 
@@ -103,9 +110,11 @@ squares_of_a
 
 # Exercise 7 - Make a variable named odds_in_a. It should hold only the odd numbers
 odds_of_a = [n for n in a if n % 2 != 0]
+print(odds_of_a)
 
 # Exercise 8 - Make a variable named evens_in_a. It should hold only the evens.
 evens_of_a = [n for n in a if n % 2 == 0]
+print(evens_of_a)
 
 ## What about life in two dimensions? A list of lists is matrix, a table, a spreadsheet, a chessboard...
 ## Setup 2: Consider what it would take to find the sum, min, max, average, sum, product, and list of squares for this list of two lists.
@@ -124,13 +133,15 @@ for row in b:
 
 # Exercise 2 - refactor the following to use numpy. 
 min_of_b = min(b[0]) if min(b[0]) <= min(b[1]) else min(b[1])  
+print(min_of_b)
 
 # Exercise 3 - refactor the following maximum calculation to find the answer with numpy.
 max_of_b = max(b[0]) if max(b[0]) >= max(b[1]) else max(b[1])
-
+print(max_of_b)
 
 # Exercise 4 - refactor the following using numpy to find the mean of b
 mean_of_b = (sum(b[0]) + sum(b[1])) / (len(b[0]) + len(b[1]))
+print(mean_of_b)
 
 # Exercise 5 - refactor the following to use numpy for calculating the product of all numbers multiplied together.
 product_of_b = 1
@@ -162,21 +173,21 @@ for row in b:
 
 # Exercise 9 - print out the shape of the array b.
 
-b.shape
+print(b.shape)
 
 # .shape doesn't use (), because of deep python source code reaseons.  Without parentheses it's an attribute without a class method, with it it's a method
 
 # Exercise 10 - transpose the array b.
-b.T
+print(b.T)
 
 # .T is transpose, which swaps the rows and columns.  Often used in exploratory analysis to help make things easier to read or print out
-b.flatten()
+print(b.flatten())
 
 # Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
-b.reshape(1, 6)
+print(b.reshape(1, 6))
 
 # Exercise 12 - reshape the array b to be a list of 6 lists, each containing only 1 number (6 x 1)
-b.reshape(6, 1)
+print(b.reshape(6, 1))
 
 ## Setup 3
 c = [
@@ -186,35 +197,58 @@ c = [
 ]
 
 
-# In[ ]:
+# In[2]:
 
 
 # HINT, you'll first need to make sure that the "c" variable is a numpy array prior to using numpy array methods.
 # Exercise 1 - Find the min, max, sum, and product of c.
+min_of_c = min(c)
+min_of_c
 
 
-# In[9]:
+# In[3]:
+
+
+max_of_c = max(c)
+max_of_c
+
+
+# In[4]:
+
+
+sum_of_c = max(c)
+sum_of_c
+
+
+# In[5]:
+
+
+product_of_c = np.prod(c)
+product_of_c
+
+
+# In[6]:
 
 
 # Exercise 2 - Determine the standard deviation of c.
 np.std(c)
 
 
-# In[10]:
+# In[7]:
 
 
 # Exercise 3 - Determine the variance of c.
 np.var(c)
 
 
-# In[11]:
+# In[8]:
 
 
 # Exercise 4 - Print out the shape of the array c
 np.shape(c)
 
 
-# In[12]:
+# In[9]:
 
 
 # Exercise 5 - Transpose c and print out transposed result.
@@ -223,7 +257,7 @@ np.transpose(c)
 # Rev c.T.mean()
 
 
-# In[13]:
+# In[10]:
 
 
 # Exercise 6 - Get the dot product of the array c with c. 
@@ -231,7 +265,7 @@ np.transpose(c)
 np.dot(c, c)
 
 
-# In[20]:
+# In[11]:
 
 
 # Exercise 7 - Write the code necessary to sum up the result of c times c transposed. Answer should be 261
@@ -240,14 +274,14 @@ np.dot(c, c)
 (np.transpose(c) * c).sum()
 
 
-# In[22]:
+# In[12]:
 
 
 # Exercise 8 - Write the code necessary to determine the product of c times c transposed. Answer should be 131681894400.
 (c * np.transpose(c)).prod()
 
 
-# In[26]:
+# In[13]:
 
 
 ## Setup 4
@@ -264,63 +298,63 @@ d = np.array(d)
 np.sin(d)
 
 
-# In[27]:
+# In[14]:
 
 
 # Exercise 2 - Find the cosine of all the numbers in d
 np.sin(d)
 
 
-# In[28]:
+# In[15]:
 
 
 # Exercise 3 - Find the tangent of all the numbers in d
 np.tan(d)
 
 
-# In[29]:
+# In[16]:
 
 
 # Exercise 4 - Find all the negative numbers in d
 d[d < 0]
 
 
-# In[30]:
+# In[17]:
 
 
 # Exercise 5 - Find all the positive numbers in d
 d[d > 0]
 
 
-# In[31]:
+# In[18]:
 
 
 # Exercise 6 - Return an array of only the unique numbers in d.
 np.unique(d)
 
 
-# In[32]:
+# In[19]:
 
 
 # Exercise 7 - Determine how many unique numbers there are in d.
 np.unique(d).size
 
 
-# In[33]:
+# In[20]:
 
 
 # Exercise 8 - Print out the shape of d.
 d.shape
 
 
-# In[34]:
+# In[21]:
 
 
 # Exercise 9 - Transpose and then print out the shape of d.
 d.T.shape
 
 
-# In[35]:
+# In[22]:
 
 
 # Exercise 10 - Reshape d into an array of 9 x 2
